@@ -1,0 +1,23 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+
+{% block barra %}{% endblock %}
+
+{% block content %}
+<body class="text-center"></body>
+
+<h2 style="color: seashell;">Create Nutricional Information</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <h2 style="color: seashell;">¿Are you sure you want to delete {{ object }}?</h2>
+    <input type="submit" value="Remove">
+    <input type="button" onclick="location.href='/lista_valores'" value="Cancel">
+</form>
+
+
+
+</body>
+
+{% endblock %}

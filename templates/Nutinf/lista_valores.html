@@ -1,0 +1,56 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+
+{% block barra %}
+<body class="text-center"></body>
+
+<h2 style="color: seashell;">List Nutricional Information</h2>
+
+</body>
+
+{% endblock %}
+
+{% block content %}
+
+{% if infonuts %}
+        <table class="form-nut">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for infonut in infonuts %}
+                
+                    <tr>
+                        <td>{{ infonut.name }} </td>
+                        <td>{{ infonut.unit }} </td>
+                        {% if perms.NutInf.change_nutinf %}
+                        <td><a href="/editar_valor/{{ infonut.id }}" style="color: blanchedalmond;">Edit</a></td>
+                        {% endif %}
+                        {% if perms.NutInf.delete_nutinf %}
+                        <td><a href="/eliminar_valor/{{ infonut.id }}" style="color: blanchedalmond;">Remove</a></td>
+                        {% endif %}
+                    </tr>
+                    
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+         <h1>No existe valores</h1>
+    {% endif %}
+    <br/>
+    <button type="button">
+        {% if perms.NutInf.add_nutinf %}
+        <input type="button" onclick="location.href='/crear_valor'" value="Create nutritional informations" style="cursor: pointer;">
+        {% endif %}
+    </button>
+
+
+
+{% endblock %}

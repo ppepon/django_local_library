@@ -1,0 +1,24 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+
+{% block barra %}{% endblock %}
+
+{% block content %}
+<body class="text-center"></body>
+
+<h2 style="color: seashell;">Create Nutricional Information</h2>
+
+<form class="form-nut" method="POST">
+    {{ form }}
+    {% csrf_token %}
+    
+    <button type="submit" style="cursor: pointer;" class="btn btn-secundary">Create/Edit</button>
+    <button type="submit" style="cursor: pointer; " class="btn btn-primary"><a href= "/lista_valores" style="color: seashell;">Cancel</a></button>
+</form>
+
+
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+
+{% block barra %}
+<body class="text-center"></body>
+
+<h2 style="color: seashell;">List Products</h2>
+
+</body>
+
+{% endblock %}
+
+{% block content %}
+
+{% if nutproducts %}
+        <table class="form-product" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+              
+
+                {% for nutproduct in nutproducts %}
+                
+                    <tr>
+                        
+                        <td>{{ nutproduct.product_id }} </td>
+                        <td>{{ nutproduct.nut_id }} </td>
+                        <td>{{ nutproduct.quantity }} </td>
+                        
+                        
+                    </tr>
+                    
+                {% endfor %}
+                    
+                
+            </tbody>
+        </table>
+
+    {% else %}
+         <h1>No existe valores</h1>
+    {% endif %}
+     
+
+    <br/>
+   
+
+
+
+{% endblock %}

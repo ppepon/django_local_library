@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+
+{% block barra %}
+<p style="color: seashell;">Welcome <b>{{request.user.username}}</b></p>
+
+{% endblock %}
+
+{% block content %}
+<body class="text-center"></body>
+
+<h2><a style="color: seashell;" href="/lista_valores"> Nutricional Information</a></h2>
+<h2><a style="color: seashell;" href="/lista_productos"> Products</a></h2>
+
+
+
+
+</body>
+
+{% endblock %}
